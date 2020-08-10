@@ -1,0 +1,33 @@
+.first
+{
+    background-color: #538cc6;
+    text-align: center;
+    color:white;
+}
+.second
+{
+    background-color:white;
+    color:#538cc6;
+    text-align: center;
+    
+}
+body
+{
+    background-color:white;
+}
+.square
+{
+    border: 2px solid black;
+    padding:80px;
+    float:left;
+    background:cyan;
+    width: 30%;
+    margin:1.66%;
+    
+}
+.container
+{
+    width:40%;
+    margin:0 auto;
+    
+}
