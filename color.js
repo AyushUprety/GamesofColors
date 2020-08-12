@@ -1,32 +1,42 @@
-var R=0; var B=0;                             //initializing the variables.
+var R=0; 
+var B=0;                             //initializing the variables.
 var G=0;
 function generaterandom()                // random color generator
 {   
-    for(let i=0;i<3;i++)
+    for(let i=0;i<3;i++)                                // for running all logic this loop is used.
     {   var randomno=Math.floor(Math.random()*256);
         if(i==0){
             R=R+randomno;
+            
 
         }
         else if(i==1)
         {
             G=G+randomno;
+            
         }
         else{
             B=B+randomno;
+            
         }
     }    
 }
 
-var add=('rgb'+'('+R+','+G+','+B+')');  // generating random rgb with the random R,G,B.
-colour=document.querySelector('#colour').innerHTML=add;  //adding  RGB text on top of the page.
+ // generating random rgb with the random R,G,B.
+  //adding  RGB text on top of the page.
 var randombox=Math.floor(Math.random()*6);  // random box generator 
 var box=document.getElementById('box'+randombox); // adding box to random no.
 
+
+
 function fixonecolor()
 {
-    document.getElementById('box'+randombox).style.backgroundColor=add;   // fixing the random box color to the color in our rgb heading.
+    var add=('rgb'+'('+R+','+G+','+B+')'); 
+    box.style.backgroundColor=add;
+    var colour=document.querySelector('#colour').innerHTML=add;
+    return add;
 }
+
 
 function randomcolor()    // giving random colors to all the boxes.
 {
@@ -49,7 +59,7 @@ a.addEventListener('click',function()
         let get1=document.getElementsByClassName('square');
         for(var i = 0; i < get1.length; i++){
             
-           get1[i].style.background=add;
+           get1[i].style.background=fixonecolor();
 
         }   
     }
@@ -60,14 +70,13 @@ b.addEventListener('click',function()
 {
     if(this.id!=box.id){
         b.remove();
-        tryagain();
     }
     else 
     {
         let get1=document.getElementsByClassName('square');  // note that classname returns array so indexing is must to get multiple values.
         for(var i = 0; i < get1.length; i++){                // for that used ge1.length
              
-           get1[i].style.background=add;
+           get1[i].style.background=fixonecolor();
 
         }       }
 });
@@ -77,14 +86,13 @@ c.addEventListener('click',function()
 {
     if(this.id!=box.id){
         c.remove();
-        tryagain();
     }
     else 
     {
         let get1=document.getElementsByClassName('square');
         for(var i = 0; i < get1.length; i++){
             
-           get1[i].style.background=add;
+           get1[i].style.background=fixonecolor();
 
         }       }
 });
@@ -93,14 +101,13 @@ d.addEventListener('click',function()
 {
     if(this.id!=box.id){
         d.remove();
-        tryagain();
     }
     else 
     {
         let get1=document.getElementsByClassName('square');
         for(var i = 0; i < get1.length; i++){
             
-           get1[i].style.background=add;
+           get1[i].style.background=fixonecolor();
 
         }      }
 });
@@ -116,7 +123,7 @@ e.addEventListener('click',function()
         let get1=document.getElementsByClassName('square');
         for(var i = 0; i < get1.length; i++){
             
-           get1[i].style.background=add;
+           get1[i].style.background=fixonecolor();
 
         }      
     }
@@ -126,25 +133,21 @@ f.addEventListener('click',function()
 {
     if(this.id!=box.id){
         f.remove();
-        tryagain();
     }
     else 
     {
         let get1=document.getElementsByClassName('square');
         for(var i = 0; i < get1.length; i++){
             
-           get1[i].style.background=add;
+           get1[i].style.background=fixonecolor();
 
         }   
     }
 }); }
 
-function tryagain()
-{
-  
-}
+
 generaterandom();
-randomcolor();
 fixonecolor();
-rado();
+randomcolor();   //All boxex ma random color generate gareko Out of them later one fixed box color is replaced by below function.
+rado();  //selecting and coloring all the boxes with same color if condition is true otherwise deleting it
 
