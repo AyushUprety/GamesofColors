@@ -38,8 +38,9 @@ body
     display: flex;
     justify-content: space-evenly;
     font-size: 20px;
-    color:cornflowerblue;
+    color:rgb(9, 65, 168);
     font-family:Arial, Helvetica, sans-serif;
+    background-color:white;
 }
 #tryagain
 {
